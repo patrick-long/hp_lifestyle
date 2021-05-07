@@ -2,7 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Workout(models.Model):
-    workout_name = models.CharField(max_length=300), 
+    workout_name = models.CharField(max_length=300),
+    date_created = models.DateTimeField('date created')
 
 class Exercise(models.Model):
     workout = models.ForeignKey(Workout, on_delete=models.CASCADE),
