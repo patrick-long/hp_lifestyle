@@ -1,14 +1,24 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.urls import reverse
+from django.views import generic
 
-from .models import Workout
+from .models import Workout, Exercise
+
+print(generic)
 
 # Create your views here.
 def home(request):
-    return HttpResponse("This is the home page of the app")
+    template_name = 'workouts/home.html'
+    return render(request, template_name)
 
-def index(request):
-    return HttpResponse("This is the official index page of the workout app. Time to get started making something cool!")
+class IndexView(generic.ListView):
+    template_name = 'workouts/index.html'
+    context_object_name = 'workouts'
 
-def detail(request, workout_id):
-    return HttpResponse( f"This is the detail page of workout {workout_id} in the database.")
+    def get_queryset(self):
+        return Workout.objects.order_by('date_created')
+
+class DetailView(generic.DetailView):
+    model = Workout
+    template_name = 'workouts/detail.html'
