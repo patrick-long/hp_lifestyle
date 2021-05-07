@@ -22,6 +22,8 @@ from workouts import views
 urlpatterns = [
     # ex: localhost:8000/
     path('', views.home, name='home'),
+    # ex: /admin/
     path('admin/', admin.site.urls),
+    # ex: /workouts/
     path('workouts/', include('workouts.urls')),
 ]
