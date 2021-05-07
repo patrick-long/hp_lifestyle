@@ -1,4 +1,15 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'workouts/style.css' %}">
+{% extends 'base.html' %}
 
-<h1>This is the index page of the app, showing all created workouts and a list of the exercises within.</h1>
+
+{% if workouts %} 
+    <ul class="workouts-container">
+        {% for workout in workouts %}
+        <li>
+            <a href="{% url 'workouts:detail' workout.id %}" class="workout-index">{{ workout.workout_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %} 
+    <h1>There are currently no workouts logged.</h1>
+{% endif %}
+

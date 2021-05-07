@@ -1,4 +1,32 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'workouts/style.css' %}">
+{% extends 'base.html' %}
 
-<h1>This is the detail page of the workouts app.</h1>
+{% block content %}
+
+<ul class="exercises-container">
+{% for exercise in workout.exercise_set.all %}
+    <li class="exercise-list-container">
+        <p class="exercise-big-name">Exercise</p>
+        <p class="exercise-value">
+            {{ exercise.exercise_name }}
+        </p>
+        <p class="exercise-small-name">Number of sets</p>
+        <p class="exercise-value">
+            {{ exercise.num_sets }}
+        </p>
+        <p class="exercise-small-name">Number of reps</p>
+        <p class="exercise-value">
+            {{ exercise.num_reps }}
+        </p>
+        <p class="exercise-small-name">Weight (in lbs)</p>
+        <p class="exercise-value">
+            {{ exercise.weight_in_pounds }} lbs.
+        </p>
+        <p class="exercise-small-name">Rest in between sets (in seconds)</p>
+        <p class="exercise-value">
+            {{ exercise.rest_time_between_sets_in_seconds }}s
+        </p>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
