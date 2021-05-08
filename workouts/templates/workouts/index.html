@@ -5,7 +5,7 @@
 <main>
     {% if workouts %} 
     <ul class="workouts-container">
-        <a href="/workout/create" class="new-workout">Create a new workout</a>
+        <a href="/workouts/create" class="new-workout">Create a new workout</a>
         {% for workout in workouts %}
             <li>
                 <a href="{% url 'workouts:detail' workout.id %}" class="workout-index">{{ workout.workout_name }}</a>

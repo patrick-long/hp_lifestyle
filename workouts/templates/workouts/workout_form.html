@@ -1,0 +1,13 @@
+{% extends 'workouts/base.html' %}
+
+{% block content %}
+
+<main class="new-workout-form">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add Workout">
+    </form>
+</main>
+
+{% endblock %}

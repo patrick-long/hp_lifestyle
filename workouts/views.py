@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.auth.forms import UserCreationForm
@@ -23,16 +23,17 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Workout.objects.order_by('date_created')
 
-class DetailView(generic.DetailView):
-    model = Workout
+def detail(request, pk):
+    workout = Exercise.objects.filter(workout_id=pk)
     template_name = 'workouts/detail.html'
+    return render(request, template_name, context={'specific_workout': workout})
 
 class CreateWorkout(CreateView):
     model = Workout
     fields = ['workout_name']
-    success_url = 'workouts/'
+    success_url = '/workouts/'
 
 class CreateExercise(CreateView):
     model = Exercise
-    fields = ['exercise_name', 'num_sets', 'num_reps', 'rest_time_between_sets_in_seconds', 'weight_in_pounds']
-    success_url = 'workouts/<int:pk>/'
+    fields = ['workout', 'exercise_name', 'num_sets', 'num_reps', 'rest_time_between_sets_in_seconds', 'weight_in_pounds']
+    success_url = '/workouts/'

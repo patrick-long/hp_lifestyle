@@ -3,7 +3,8 @@
 {% block content %}
 
 <ul class="exercises-container">
-{% for exercise in workout.exercise_set.all %}
+    <a href="/workouts/exercises/create" class="new-workout">Create a new exercise</a>
+{% for exercise in specific_workout %}
     <li class="exercise-list-container">
         <p class="exercise-big-name">Exercise</p>
         <p class="exercise-value">

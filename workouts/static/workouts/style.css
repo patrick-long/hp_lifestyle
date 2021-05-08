@@ -42,7 +42,7 @@ body {
     transform: scale(1.2);
 }
 
-.exercises-container, .workouts-container, .signup-form {
+.exercises-container, .workouts-container, .signup-form, .new-workout-form, .new-exercise-form {
     padding: 6em 1.5em 0 1.5em;
     min-height: 75vh;
     margin: 0;
@@ -85,11 +85,11 @@ footer {
     margin-top: 20px;
 }
 
-.workout-index:hover, .new-workout:hover {
+.workout-index:hover, .new-workout:hover, .new-exercise:hover {
     color: rgb(121, 150, 255);
 }
 
-.new-workout {
+.new-workout, .new-exercise {
     text-decoration: none;
     color: white;
     margin-bottom: 20px;
