@@ -3,19 +3,22 @@
 {% block content %}
 
 <main>
+    {% if user.is_authenticated %}
     {% if workouts %} 
-    <ul class="workouts-container">
-        <a href="/workouts/create" class="new-workout">Create a new workout</a>
-        {% for workout in workouts %}
-            <li>
-                <a href="{% url 'workouts:detail' workout.id %}" class="workout-index">{{ workout.workout_name }}</a>
-                <a href="/workouts/{{workout.id}}/update/">Edit</a>
-                <a href="/workouts/{{workout.id}}/delete/">Delete</a>
-            </li>
-        {% endfor %}
+        <ul class="workouts-container">
+            <a href="/workouts/create" class="new-workout">Create a new workout</a>
+            {% for workout in workouts %}
+                <li>
+                    <a href="{% url 'workouts:detail' workout.id %}" class="workout-index">{{ workout.workout_name }}</a>
+                    <a href="/workouts/{{workout.id}}/update/">Edit</a>
+                    <a href="/workouts/{{workout.id}}/delete/">Delete</a>
+                </li>
+            {% endfor %}
         </ul>
     {% else %} 
         <h1>There are currently no workouts logged.</h1>
+        <a href="/workouts/create" class="new-workout">Create a new workout</a>
+    {% endif %}
     {% endif %}
 </main>
 

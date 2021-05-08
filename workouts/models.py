@@ -1,17 +1,19 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Workout(models.Model):
     workout_name = models.CharField(max_length=300, default='my workout')
     date_created = models.DateTimeField('date created', default=timezone.now)
+    user = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
     def was_created_recently(self):
         return self.date_created >= timezone.now() - datetime.timedelta(days=1)
     def __str__(self):
         return self.workout_name
 
 class Exercise(models.Model):
-    workout = models.ForeignKey(Workout, default=1, on_delete=models.CASCADE)
+    workout = models.ForeignKey(Workout, on_delete=models.CASCADE)
     exercise_name = models.CharField(max_length=200, default='my exercise')
     num_sets = models.IntegerField(default=0)
     num_reps = models.IntegerField(default=0)
