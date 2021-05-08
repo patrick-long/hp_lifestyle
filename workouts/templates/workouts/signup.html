@@ -5,7 +5,10 @@
 <main>
     <form action="" method="POST" class="signup-form">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
+        {% for error in field.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
         <input type="submit" value="Sign Up">
     </form>
 </main>

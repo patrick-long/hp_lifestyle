@@ -4,7 +4,7 @@ from django.utils import timezone
 # Create your models here.
 class Workout(models.Model):
     workout_name = models.CharField(max_length=300, default='my workout')
-    date_created = models.DateTimeField('date created', default=timezone.now())
+    date_created = models.DateTimeField('date created', default=timezone.now)
     def was_created_recently(self):
         return self.date_created >= timezone.now() - datetime.timedelta(days=1)
     def __str__(self):

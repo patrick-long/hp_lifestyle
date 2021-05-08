@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.forms import UserCreationForm
@@ -9,8 +9,16 @@ print(generic)
 
 # Create your views here.
 def signup(request):
-    form = UserCreationForm()
-    return render(request, 'workouts/signup.html', {'form': form })
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/workouts/')
+        else:
+            return redirect('/signup/')
+    else:
+        form = UserCreationForm()
+        return render(request, 'workouts/signup.html', {'form': form })
 
 def home(request):
     template_name = 'workouts/home.html'
