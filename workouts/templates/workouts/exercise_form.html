@@ -3,10 +3,15 @@
 {% block content %}
 
 <main class="new-exercise-form">
+    <h1>Editing: {{object.exercise_name}}</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Add Exercise">
+        {% if object %}
+            <input type="submit" value="Update exercise">
+        {% else %}
+            <input type="submit" value="Add exercise">
+        {% endif %}
     </form>
 </main>
 

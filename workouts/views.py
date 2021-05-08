@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.forms import UserCreationForm
 
 from .models import Workout, Exercise
@@ -46,4 +46,13 @@ class UpdateWorkout(UpdateView):
 class UpdateExercise(UpdateView):
     model = Exercise
     fields = ['workout', 'exercise_name', 'num_sets', 'num_reps', 'rest_time_between_sets_in_seconds', 'weight_in_pounds']
+    success_url = '/workouts/'
+
+class DeleteWorkout(DeleteView):
+    model = Workout
+    success_url = '/workouts/'
+
+
+class DeleteExercise(DeleteView):
+    model = Exercise
     success_url = '/workouts/'
