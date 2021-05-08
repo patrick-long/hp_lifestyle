@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'workouts/base.html' %}
 
 {% block content %}
 
 <main>
-    <form action="" method="POST">
+    <form action="" method="POST" class="signup-form">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Sign Up">

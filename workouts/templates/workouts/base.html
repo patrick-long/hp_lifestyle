@@ -7,17 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'workouts/style.css' %}">
-    <title>HP Lifestyle</title>
+    <title>{{ title }}</title>
 </head>
 <body>
-    <nav class="nav-bar">
-        <a href="/" class="nav-home">H O M E</a>
-        <a href="/workouts/" class="nav-workouts">W O R K O U T S</a>
-        <a href="/signup/" class="nav-signup">S I G N &nbsp;&nbsp;&nbsp;U P</a>
-    </nav>
-    
+    <header>
+        <nav class="nav-bar">
+            <a href="/" class="nav-home">H O M E</a>
+            <a href="/workouts/" class="nav-workouts">W O R K O U T S</a>
+            <a href="/signup/" class="nav-signup">S I G N &nbsp;&nbsp;&nbsp;U P</a>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
     <footer>
-        Copyright © HP Lifestyle 2021
+        Copyright © All Rights Reserved HP Lifestyle 2021
     </footer>
 </body>
 </html>
