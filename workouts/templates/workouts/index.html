@@ -9,8 +9,9 @@
         {% for workout in workouts %}
             <li>
                 <a href="{% url 'workouts:detail' workout.id %}" class="workout-index">{{ workout.workout_name }}</a>
+                <a href="/workouts/{{workout.id}}/update/">Edit workout</a>
             </li>
-            {% endfor %}
+        {% endfor %}
         </ul>
     {% else %} 
         <h1>There are currently no workouts logged.</h1>

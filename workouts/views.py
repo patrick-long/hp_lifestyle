@@ -37,3 +37,13 @@ class CreateExercise(CreateView):
     model = Exercise
     fields = ['workout', 'exercise_name', 'num_sets', 'num_reps', 'rest_time_between_sets_in_seconds', 'weight_in_pounds']
     success_url = '/workouts/'
+
+class UpdateWorkout(UpdateView):
+    model = Workout
+    fields = ['workout_name']
+    success_url = '/workouts/'
+
+class UpdateExercise(UpdateView):
+    model = Exercise
+    fields = ['workout', 'exercise_name', 'num_sets', 'num_reps', 'rest_time_between_sets_in_seconds', 'weight_in_pounds']
+    success_url = '/workouts/'
