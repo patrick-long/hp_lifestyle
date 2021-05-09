@@ -11,7 +11,7 @@
                 <li class="workout-index">
                     <a href="{% url 'workouts:detail' workout.id %}">{{ workout.workout_name }}</a>
                     <div class="workout-index-buttons">
-                        <a href="/workouts/{{workout.id}}/update/" class="btn btn-secondary">Edit</a>
+                        <a href="/workouts/{{workout.id}}/update/" class="btn btn-secondary">Edit name</a>
                         <a href="/workouts/{{workout.id}}/delete/" class="btn btn-danger">Delete</a>
                     </div>
                 </li>

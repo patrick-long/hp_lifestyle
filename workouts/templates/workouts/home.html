@@ -1,9 +1,71 @@
 {% extends 'workouts/base.html' %}
+{% load static %}
 
 {% block content %}
 
-<main class="landing-page">
-    <h1>This is the home page of the app</h1>
+<main class="home-main">
+    <div class="home-img">
+        <div class="landing-page">
+            <h1>High Pace Lifestyle</h1>
+        </div>
+    </div>
+
+    <div class="articles-container">
+        <div class="article article1">
+            <div class="inner-article">
+                <h3>How To Improve Your Deadlift</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ex quidem libero tempora, nobis aperiam nihil excepturi? Molestiae modi.</p>
+            </div>
+        </div>
+        <div class="article article2">
+            <div class="inner-article">
+                <h3>7 Habits for a Healthy Heart</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, ad eos aspernatur excepturi eum officiis maxime. Perferendis delectus ad eveniet vitae, quia molestiae repellat.</p>
+            </div>
+        </div>
+        <div class="article article3">
+            <div class="inner-article">
+                <h3>Which Exercises Should You Be Focusing?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, quaerat corrupti est dolor, facilis saepe, tempora vel iste voluptatibus possimus libero praesentium modi error.</p>
+            </div>
+        </div>
+        <div class="article article4">
+            <div class="inner-article">
+                <h3>Efficacy of Dumbell Curls on the Lateral Head</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, laboriosam vitae cumque recusandae iure ad aliquam provident magnam.</p>
+            </div>
+        </div>
+        <div class="article article5">
+            <div class="inner-article">
+                <h3>Weight Training Vs. HIIT?</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem rerum tempore ad mollitia id corrupti officia ducimus voluptate! Consequatur recusandae est.</p>
+            </div>
+        </div>
+        <div class="article article6">
+            <div class="inner-article">
+                <h3>10 Tips for Next-Level Meal Prepping</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia fuga rerum saepe eos fugiat dignissimos repellendus soluta, sint eveniet necessitatibus quam.</p>
+            </div>
+        </div>
+        <div class="article article7">
+            <div class="inner-article">
+                <h3>Bodybuilding 101</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, praesentium quas. Repellat architecto consequuntur cupiditate placeat, esse ab. Fugiat voluptas nihil minima facere nostrum corporis, quidem delectus asperiores amet maiores.</p>
+            </div>
+        </div>
+        <div class="information-form">
+            <label>
+                Email:
+                <input type="text" name="email" class="form-control" placeholder="Your email">
+            </label>
+            <label>
+                Any feedback? Let us know your thoughts! 
+                <input type="text" name="response" class="form-control" placeholder="Your response">
+            </label>
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
 </main>
 
 {% endblock %}

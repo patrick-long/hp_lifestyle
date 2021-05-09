@@ -2,13 +2,15 @@
 
 {% block content %}
 
-<main>
+<main class="confirm-delete">
     <form action="" method="post">
         <h1>Are you sure you would like to delete {{ object.exercise_name }}?</h1>
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Delete">
-        <a href="/workouts/">Cancel</a>
+        <div class="workout-form-buttons">
+            <input type="submit" value="Delete" class="btn btn-danger">
+            <a href="/workouts/{{object.workout_id}}" class="btn btn-secondary">Cancel</a>
+        </div>
 </main>
 
 {% endblock %}
