@@ -4,34 +4,40 @@
 
 <ul class="exercises-container">
     {% if user.is_authenticated %}
-        <a href="/workouts/exercises/create" class="btn btn-primary new-workout">Create a new exercise</a>
+        <div class="exercise-route-buttons">
+        {% if specific_workout %}
+            <a href="/workouts/exercises/create" class="btn btn-primary">Add an exercise</a>
+        {% else %}
+            <a href="/workouts/exercises/create" class="btn btn-primary">Create an exercise</a>
+        {% endif %}
+            <a href="/workouts/" class="btn btn-secondary">Back to workouts</a>
+        </div>
+    {% if specific_workout %}
     {% for exercise in specific_workout %}
         <li class="exercise-list-container">
-            <p class="exercise-big-name">Exercise</p>
-            <p class="exercise-value">
-                {{ exercise.exercise_name }}
+            <p class="exercise-big-name">
+                Exercise: {{ exercise.exercise_name }}
             </p>
-            <p class="exercise-small-name">Number of sets</p>
-            <p class="exercise-value">
-                {{ exercise.num_sets }}
+            <p class="exercise-small-name">
+                Number of sets: {{ exercise.num_sets }}
             </p>
-            <p class="exercise-small-name">Number of reps</p>
-            <p class="exercise-value">
-                {{ exercise.num_reps }}
+            <p class="exercise-small-name">
+                Number of reps: {{ exercise.num_reps }}
             </p>
-            <p class="exercise-small-name">Weight (in lbs)</p>
-            <p class="exercise-value">
-                {{ exercise.weight_in_pounds }} lbs.
+            <p class="exercise-small-name">
+                Weight (in lbs): {{ exercise.weight_in_pounds }} lbs.
             </p>
-            <p class="exercise-small-name">Rest in between sets (in seconds)</p>
-            <p class="exercise-value">
-                {{ exercise.rest_time_between_sets_in_seconds }}s
+            <p class="exercise-small-name">
+                Rest in between sets (in seconds): {{ exercise.rest_time_between_sets_in_seconds }}s
             </p>
             <a href="/workouts/exercises/{{exercise.id}}/update/" class="btn btn-secondary">Edit</a>
             <a href="/workouts/exercises/{{exercise.id}}/delete/" class="btn btn-danger">Delete</a>
         </li>
     {% endfor %}
-    <a href="/workouts/" class="btn btn-secondary">Back to workouts</a>
+    {% else %}
+        <h1>Looks like there aren't any exercises at the moment...</h1>
+        <h3>Use the "Create an exercise" button above to get started!</h3>
+    {% endif %}
     {% endif %}
 </ul>
 
