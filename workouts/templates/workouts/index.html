@@ -2,16 +2,16 @@
 
 {% block content %}
 
-<main>
+<main class="index-container">
     {% if user.is_authenticated %}
     {% if workouts %} 
         <ul class="workouts-container">
-            <a href="/workouts/create" class="new-workout">Create a new workout</a>
+            <a href="/workouts/create/" class="btn btn-secondary new-workout">Create a new workout</a>
             {% for workout in workouts %}
                 <li>
                     <a href="{% url 'workouts:detail' workout.id %}" class="workout-index">{{ workout.workout_name }}</a>
-                    <a href="/workouts/{{workout.id}}/update/">Edit</a>
-                    <a href="/workouts/{{workout.id}}/delete/">Delete</a>
+                    <a href="/workouts/{{workout.id}}/update/" class="btn btn-secondary">Edit</a>
+                    <a href="/workouts/{{workout.id}}/delete/" class="btn btn-danger">Delete</a>
                 </li>
             {% endfor %}
         </ul>

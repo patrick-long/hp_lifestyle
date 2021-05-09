@@ -2,15 +2,21 @@
 
 {% block content %}
 
-<main>
-    <h1>Editing: {{object.exercise_name}}</h1>
-    <form action="" method="post">
+<main class="exercise-form-container">
+    <form action="" method="post" class="exercise-form">
+    {% if object %}
+        <h1>Editing: {{object.exercise_name}}</h1>
+    {% else %}
+        <h2>Create a new exercise to add to a workout</h2>
+    {% endif %}
         {% csrf_token %}
         {{ form.as_p }}
         {% if object %}
-            <input type="submit" value="Update exercise">
+            <a href="/workouts/{{object.workout_id}}" class="btn btn-danger">Cancel</a>
+            <input type="submit" class="btn btn-success" value="Update exercise">
         {% else %}
-            <input type="submit" value="Add exercise">
+            <a href="/workouts/" class="btn btn-danger">Cancel</a>
+            <input type="submit" class="btn btn-success" value="Add exercise">
         {% endif %}
     </form>
 </main>

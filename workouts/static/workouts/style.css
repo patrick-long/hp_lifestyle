@@ -3,6 +3,7 @@
     --main-color: rgb(14, 14, 14);
     --secondary-color: rgb(0, 0, 0);
     --nav-words: rgb(215, 215, 215);
+    --form-background-color: rgba(0, 0, 0, 0.413);
 }
 
 html {
@@ -119,4 +120,48 @@ footer {
 
 .signup-form {
     margin-top: 5%;
+}
+
+.workout-form-container {
+    background: url('imgs/workout-form-background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workout-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--form-background-color);
+    border-radius: 10px;
+    padding: 2em 1em;
+    width: 40%;
+}
+
+.workout-form-buttons {
+    display: flex;
+}
+
+.workout-form-buttons > a, .workout-form-buttons > input, .exercise-form-buttons > a, .exercise-form-buttons > input {
+    margin: 0 1em;
+}
+
+.landing-page {
+    background: url('imgs/main-background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.exercise-form-container {
+    background: url('imgs/exercise-form-background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.exercise-form {
+    background-color: var(--form-background-color);
+    border-radius: 10px;
+    padding: 2em 1em;
+    width: 40%;
+    margin-top: 3%;
 }
