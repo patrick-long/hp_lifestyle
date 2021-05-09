@@ -4,7 +4,7 @@
 
 <ul class="exercises-container">
     {% if user.is_authenticated %}
-        <a href="/workouts/exercises/create" class="btn btn-secondary new-workout">Create a new exercise</a>
+        <a href="/workouts/exercises/create" class="btn btn-primary new-workout">Create a new exercise</a>
     {% for exercise in specific_workout %}
         <li class="exercise-list-container">
             <p class="exercise-big-name">Exercise</p>

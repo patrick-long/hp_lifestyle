@@ -69,7 +69,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
+    height: 13vh;
     width: 100%;
     color: var(--nav-words);
     font-weight: 300;
@@ -127,7 +127,10 @@ footer {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+.workout-form-container > h1 {
+    margin-top: 3em;
 }
 
 .workout-form {
@@ -137,7 +140,7 @@ footer {
     background-color: var(--form-background-color);
     border-radius: 10px;
     padding: 2em 1em;
-    width: 40%;
+    width: 32%;
 }
 
 .workout-form-buttons {
@@ -164,4 +167,43 @@ footer {
     padding: 2em 1em;
     width: 40%;
     margin-top: 3%;
+}
+
+.index-container {
+    background: url('imgs/index-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.index-container > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.workout-index {
+    background-color: rgba(0, 0, 0, 0.605);
+    border-radius: 10px;
+    padding: 0.5em;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workout-index > a {
+    color: rgb(255, 255, 97);
+}
+
+.workout-index > a:hover {
+    text-decoration: none;
+}
+
+.workout-index:last-child {
+    margin-bottom: 2em;
 }
