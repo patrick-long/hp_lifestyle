@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 :root {
-    --main-color: rgb(84, 84, 84);
-    --secondary-color: rgb(72, 72, 72);
+    --main-color: rgb(14, 14, 14);
+    --secondary-color: rgb(0, 0, 0);
     --nav-words: rgb(215, 215, 215);
 }
 
@@ -40,11 +40,12 @@ body {
 .nav-home:hover, .nav-workouts:hover, .nav-signup:hover {
     color: white;
     transform: scale(1.2);
+    text-decoration: none;
 }
 
 .exercises-container, main {
     padding: 6em 1.5em 0 1.5em;
-    min-height: 75vh;
+    min-height: 90vh;
     margin: 0;
 }
 
@@ -93,4 +94,29 @@ footer {
     text-decoration: none;
     color: white;
     margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 10% 5%;
+    background-color: rgba(0, 0, 0, 0.632);
+    border-radius: 10px;
+    padding: 2em 1em;
+}
+
+.login-form-container {
+    display: flex;
+    align-items: center;
+    background: url('imgs/login-background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-button {
+    width: 50%;
+}
+
+.signup-form {
+    margin-top: 5%;
 }

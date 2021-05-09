@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<main>
+<main class="login-form-container">
     <form action="" method="POST" class="login-form">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Log in">
+        {{ form.as_p }}
+        <input type="submit" value="Log in" class="btn btn-success login-button">
     </form>
 </main>
 
