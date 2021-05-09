@@ -1,1 +1,1 @@
-web: gunicorn django_workouts.wsgi
+web: gunicorn hp_lifestyle.wsgi
