@@ -6,7 +6,7 @@
     {% if user.is_authenticated %}
     {% if workouts %} 
         <ul>
-            <a href="/workouts/create/" class="btn btn-primary new-workout">Create a new workout</a>
+            <a href="/workouts/create/" class="btn btn-primary">Create a new workout</a>
             {% for workout in workouts %}
                 <li class="workout-index">
                     <a href="{% url 'workouts:detail' workout.id %}">{{ workout.workout_name }}</a>
@@ -18,8 +18,10 @@
             {% endfor %}
         </ul>
     {% else %} 
-        <h1>There are currently no workouts logged.</h1>
-        <a href="/workouts/create" class="new-workout">Create a new workout</a>
+        <div class="no-workouts">
+            <a href="/workouts/create" class="new-workout btn btn-primary">Create a new workout</a>
+            <h1>There are currently no workouts logged.</h1>
+        </div>
     {% endif %}
     {% endif %}
 </main>
